@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A codebase drawn as an archipelago: repos and modules are island cities, dependencies are bridges." />
+    <title>Repo Archipelago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:ital,wght@0,600;0,700;1,700&display=block" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+    <header id="title"></header>
+    <aside id="legend"></aside>
+    <aside id="details" hidden></aside>
+    <nav id="toolbar">
+      <button id="open-paste" type="button">Paste JSON</button>
+      <button id="copy-prompt" type="button" title="Copy a prompt that asks an AI assistant to describe your repo in this format">Copy AI prompt</button>
+      <button id="show-example" type="button">Example: GNU Wget</button>
+    </nav>
+    <dialog id="paste-dialog">
+      <form id="paste-form" method="dialog">
+        <h2>Load your archipelago</h2>
+        <p>Paste JSON in the archipelago format, or open a file. Use “Copy AI prompt” to have an assistant generate it from your repo. Your JSON stays in this browser.</p>
+        <textarea id="paste-json" spellcheck="false" placeholder='{ "title": "…", "islandKinds": { … }, "bridgeKinds": { … }, "islands": [ … ], "bridges": [ … ] }'></textarea>
+        <p id="paste-error" role="alert"></p>
+        <div class="dialog-actions">
+          <label class="file-button">Open file…<input id="paste-file" type="file" accept="application/json,.json" /></label>
+          <button id="paste-cancel" type="button">Cancel</button>
+          <button type="submit" class="primary">Load</button>
+        </div>
+      </form>
+    </dialog>
+    <div id="error" hidden></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

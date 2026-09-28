@@ -1,0 +1,22 @@
+{
+  "name": "repo-archipelago",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^9.28.0",
+    "@babylonjs/gui": "^9.28.0"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  },
+  "private": true,
+  "type": "module",
+  "description": "A codebase drawn as an archipelago: repos and modules are island cities, dependencies are bridges.",
+  "license": "MIT"
+}
