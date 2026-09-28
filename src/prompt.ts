@@ -2,7 +2,7 @@ import { MAX_ISLANDS } from "./architecture";
 
 export const ANALYSIS_PROMPT = `Analyse this codebase and describe its architecture as JSON for Repo Archipelago, a 3D map where each island is a repo or top-level module and each bridge is a dependency between two of them.
 
-Reply with only the JSON, in this shape:
+Dump the JSON to archipelago.json at the repository root, in this shape:
 
 {
   "title": "<Project> archipelago",
@@ -25,7 +25,8 @@ Reply with only the JSON, in this shape:
 }
 
 Rules:
-- 5 to ${MAX_ISLANDS} islands. Group small folders; include important external services or libraries as islands when they matter.
+- 5 to ${MAX_ISLANDS} islands. Group small folders. Exclude external libraries: only code that lives in the repository becomes an island.
+- Keep things high-level and limit the number of bridges: only the dependencies that matter for understanding the architecture, not every import.
 - "from" depends on "to" (calls it, imports it, reads its data).
 - Base bridges on real evidence: imports, HTTP clients, env vars naming other services, docker-compose links, package manifests.
 - "size" is the count of tracked source files (for example \`git ls-files <path> | wc -l\` restricted to source extensions).

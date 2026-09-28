@@ -21,8 +21,8 @@ npm run build      # typecheck + static bundle in dist/
 
 ## Map your own codebase
 
-1. Click **Copy AI prompt** and give it to an AI coding assistant running in your repository (or paste your code into a chat). It replies with the JSON.
-2. Click **Paste JSON**, paste the reply (or open a `.json` file) and **Load**. The JSON is validated and any error names the offending field.
+1. Click **Copy AI prompt** and give it to an AI coding assistant running in your repository. It writes `archipelago.json` at the repository root.
+2. Click **Paste JSON**, open `archipelago.json` (or paste its content) and **Load**. The JSON is validated and any error names the offending field.
 
 Pasted JSON is kept in your browser's local storage only; **Example** switches back to the bundled map. You can also serve a file and open `?data=<url>`.
 
